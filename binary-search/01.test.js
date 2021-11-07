@@ -30,7 +30,7 @@ describe('binary search', () => {
     run(bs_left_boundary)
     // basic alg can't handle this case
     it('should find the target when ele is duplicated', () => {
-      const list = [1, 2, 3, 5, 5, 6, 7, 8, 9]
+      const list = [1, 2, 5, 5, 5]
       const index = list.findIndex(i => i === 5); // 3
       expect(bs_left_boundary(list, 5)).toBe(index)
     })

@@ -31,16 +31,17 @@ exports.bs_left_boundary = function (list, target) {
   while (left <= right) {
     let mid = Math.ceil(left + (right - left) / 2)
 
-    if (target < list[mid]) {
+    if (target < list[mid]) { // 缩小范围到左半区
       right = mid - 1;
-    } else if (target > list[mid]) {
+    } else if (target > list[mid]) { // 缩小范围到右半区
       left = mid + 1;
     } else {
-      right = mid - 1; // 相当查找左半区
+      right = mid - 1; // 找到后，向左边收缩边界
     }
   }
 
-  if (left >= list.length || list[left] !== target) return -1
+  if (left >= list.length) return -1; // 全部比target小，left + 1 溢出
+  if (list[left] !== target) return -1; // 全部比target大，left = 0; left总是在mid右侧，故不会小于0
+
   return left
 }
-
