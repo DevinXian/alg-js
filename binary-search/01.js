@@ -71,7 +71,3 @@ exports.bs_right_boundary = function (list, target) {
 
   return right // 别搞错了
 }
-
-// console.log(exports.bs_right_boundary([1, 2, 3, 4, 5], 6))
-// console.log(exports.bs_right_boundary([1, 2, 3, 4, 5], 0))
-// console.log(exports.bs_right_boundary([1, 2, 3, 4, 5], 4))

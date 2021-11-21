@@ -1,6 +1,8 @@
 const { bs, bs_left_boundary, bs_right_boundary } = require('./01')
 
+// maybe test cases forEach is better solution >.<
 function run(bs) {
+  return;
   it('empty should return -1', () => {
     expect(bs([], 10)).toBe(-1);
   })
@@ -30,9 +32,8 @@ describe('binary search', () => {
     run(bs_left_boundary)
     // basic alg can't handle this case
     it('should find the target when ele is duplicated', () => {
-      const list = [1, 2, 5, 5, 5]
-      const index = list.findIndex(i => i === 5); // 3
-      expect(bs_left_boundary(list, 5)).toBe(index)
+      const list = [1, 2, 4, 5, 5]
+      expect(bs_left_boundary(list, 5)).toBe(3)
     })
   })
 
@@ -40,9 +41,8 @@ describe('binary search', () => {
     run(bs_right_boundary)
     // basic alg can't handle this case
     it('should find the target when ele is duplicated', () => {
-      const list = [1, 2, 3, 5, 5]
-      const index = list.reverse().findIndex(i => i === 5); // 0
-      expect(bs_left_boundary(list, 5)).toBe(index)
+      const list = [1, 2, 4, 5, 5]
+      expect(bs_right_boundary(list, 5)).toBe(4)
     })
   })
 })
