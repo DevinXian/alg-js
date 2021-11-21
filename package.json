@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "test": "jest"
+    "test": "jest -o"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
+    "husky": "^7.0.4",
     "jest": "^27.3.1"
   }
 }
